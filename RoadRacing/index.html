@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Road Racing</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    font-weight: 600;
+  }
+
+  body {
+    background-image: url(shutterstock_645505654.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .gameArea {
+    height: 790px;
+    width: 400px;
+    background-color: #2d3436;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-right: 7px dashed #c8d6e5;
+    border-left: 7px dashed #c8d6e5;
+  }
+
+  .car,
+  .enemy {
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    bottom: 120px;
+    z-index: 8;
+  }
+
+  .enemy img {
+    height: 100%;
+    width: 100%;
+    transform: scale(1.2, 1.04);
+  }
+
+
+  .lines {
+    position: absolute;
+    height: 100px;
+    width: 10px;
+    background-color: #fff;
+    top: -200px;
+    margin-left: 190px;
+  }
+
+  .My_car {
+    height: 100%;
+    width: 100%;
+    transform: scale(1.1);
+  }
+
+  .score {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    background-color: #ee5255;
+    line-height: 70px;
+    width: 300px;
+    /* height: 70px; */
+    text-align: center;
+    color: #fff;
+    font-size: 1.3rem;
+    font-family: cursive;
+    box-shadow: 0px 5px 5px #777;
+  }
+
+  .startScreen {
+    position: absolute;
+    background-color: #ee5255;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 99;
+    text-align: center;
+    border: solid 1px #ff6b6b;
+    padding: 15px;
+    margin: auto;
+    width: 50%;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 5;
+    font-size: 20px;
+    word-spacing: 3;
+    line-height: 30px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 5px #777;
+  }
+
+  .selectCar {
+    position: fixed;
+    right: 20px;
+    top: 50px;
+    background: #ee5255;
+    color: #fff;
+    padding: 5px 20px;
+    transition: 0.5s ease;
+    cursor: pointer;
+    text-indent: 0;
+    font-size: 24px;
+    overflow: hidden;
+  }
+
+  .selectCar button {
+    padding: 2px 30px;
+    font-size: 20px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+  }
+
+  .UserCars {
+    height: 80px;
+    padding: 10px 0;
+    border-bottom: dashed 4px #fff;
+    display: flex;
+    justify-content: center;
+  }
+
+  .UserCars img {
+    height: 100%;
+  }
+</style>
+
+<body>
+  <div onclick="" class="selectCar">
+    <button onclick="SelectMyCar()">Select Car</button>
+    <div onclick="GetCar(1)" class="UserCars">
+      <img src="car2.png" alt="">
+    </div>
+    <div onclick="GetCar(2)" class="UserCars">
+      <img src="car8.png" alt="">
+    </div>
+  </div>
+  <div class="carGame">
+    <div class="score"></div>
+    <div class="startScreen">
+      <p>
+        Press Here To Start <br />
+        Arrow Key To Move <br />
+        If You Hit Another Car You Will Lose
+      </p>
+    </div>
+  </div>
+  <div class="gameArea"></div>
+  <script src="Script.js"></script>
+</body>
+
+</html>
